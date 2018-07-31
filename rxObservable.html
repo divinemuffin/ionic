@@ -8,7 +8,27 @@
     <script src="https://unpkg.com/@reactivex/rxjs@5.3.0/dist/global/Rx.js"></script>
     <title>Observables</title>
 </head>
-<body>
-    
-</body>
 </html>
+
+<script>
+    // main()
+
+    let data = {
+        categories: ["Sport", "News", "Adult 18+", "Movies", "History", "Discovery Nature"],
+        channels: ["CCTV", "Make Smiles", "Nova", "Prime", "History channel", "Discovery", "SpicyTV"],
+    }
+
+
+    const obs = Rx.Observable;
+
+    const observer = {
+        next: function(value){
+            
+        }
+    }
+
+    obs.from(observer)
+        .subscribe();
+
+
+</script>
