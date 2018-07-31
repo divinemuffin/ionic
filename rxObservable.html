@@ -22,15 +22,21 @@
         categories: ["Sport", "News", "Adult 18+", "Movies", "History", "Discovery Nature"],
         channels: ["CCTV", "Make Smiles", "Nova", "Prime", "History channel", "Discovery", "SpicyTV"],
     }
+    let source = Rx.Observable.interval(10);
 
-    const observer = {
+    let subscription = {
         next: function(value){
             console.log(value);
+        },
+        error: function(error){
+            console.log(error);
         }
-    }
+    };
 
-    Rx.Observable.of(data)
-        .subscribe(observer);
-
+    source
+        .filter(function(value){
+            return value % 10 == 0;
+        })
+        .subscribe(subscription);
 
 </script>
