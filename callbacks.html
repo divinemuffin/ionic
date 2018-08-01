@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- loading rxjs rom cdn -->
+    <!-- <script src="https://unpkg.com/@reactivex/rxjs@5.3.0/dist/global/Rx.js"></script> -->
+    <title>Callbacks</title>
+</head>
+</html>
+<body style="text-align: center; font-size: 30px;">
+    <button>Check user</button>
+    <div></div>
+</body>
+
+<script>
+    function switchText(text){
+        document.querySelector("div").textContent = text;
+    }
+
+    const checkAuth = (cb) => {
+        switchText("Checking authentication...");
+        setTimeout(function(){
+            cb(true);
+        }, 2000)
+        return cb;
+    }
+
+    function fetchUser(cb) {
+        switchText("Fetching user...");
+        setTimeout(function(){
+            cb({name: "Robin"});
+        }, 2000)
+        return cb;
+    }
+
+    document.querySelector('button').addEventListener('click', function(){
+        checkAuth(auth => {
+            if (auth) fetchUser(user =>{
+                switchText(user.name);
+            })
+        })
+    }) 
+</script>
