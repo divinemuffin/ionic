@@ -11,6 +11,7 @@
 </html>
 <body>
     <button onclick="viewStatus()">View My Stats</button>
+    <button onclick="Study()">Try to study</button>
 </body>
 
 <script>
@@ -54,6 +55,8 @@
     Study()
         .then(applyToWork, liveLonelyLife)
         .then(getRaised)
+        .then(findWomen)
+        .then(createFamily)
         .catch(error => console.error(error))
     
 </script>
