@@ -35,10 +35,20 @@
         return cb;
     }
 
+    function storeUser(name, cb){
+        setTimeout(function(){
+            cb({response: "saved"});
+        }, 2000)
+        return cb;
+    }
+
     document.querySelector('button').addEventListener('click', function(){
         checkAuth(auth => {
-            if (auth) fetchUser(user =>{
+            if (auth) fetchUser(user => {
                 switchText(user.name);
+                storeUser(user.name, callback => { 
+                    switchText('Username ' + callback.response) 
+                });
             })
         })
     }) 
