@@ -1,17 +1,39 @@
 <ion-header>
   <ion-navbar>
+    <!-- <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <section class="title-wrap">
+    <!-- <h1 id="title">{{variables.main.title}}</h1>
+    <h2 id="subtitle">{{variables.main.subtitle}}</h2> -->
+  </section>
+  <section class="card-background-page">
+    <!-- <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let card of variables.main.cards" col-12 col-md-6 col-lg-4 col-xl-3>
+          <ion-card>
+            <ion-card-content>
+              <img src="../../assets/imgs/{{card.imgUrl}}"/>
+              <div class="card-title">{{card.title}}</div>
+              <div class="card-subtitle">{{card.description}}</div>
+            </ion-card-content>
+            <ion-row no-padding>
+              <ion-col text-right>
+                <button ion-button clear small color="danger" icon-start>
+                  <ion-icon name='share-alt'></ion-icon>
+                  {{variables.main.btn_txt_more}}
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid> -->
+  </section>
+  
 </ion-content>
