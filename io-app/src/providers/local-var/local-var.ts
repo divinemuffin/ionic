@@ -41,4 +41,9 @@ export class LocalVarProvider {
     btn_txt_more: "Перейти"
   }
 
+
+  getVariables(page) {
+    return this[page];
+  }
+
 }

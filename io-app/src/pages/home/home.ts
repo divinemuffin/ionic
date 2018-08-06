@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
 import { LocalVarProvider } from "../../providers/local-var/local-var"
-
-import { AboutPage } from '../about/about';
 
 
 @Component({
@@ -12,11 +9,19 @@ import { AboutPage } from '../about/about';
 })
 
 export class HomePage {
+  constructor(
+    public navCtrl: NavController, 
+    public localVarService: LocalVarProvider
+  ) { }
+
   root = 'AboutPage';
- 
-  constructor(public navCtrl: NavController) { }
- 
+  variables = this.localVarService['main']
+
   open(pageName) {
     this.root = pageName;
+  }
+
+  write(thing){
+    console.log(thing);
   }
 }

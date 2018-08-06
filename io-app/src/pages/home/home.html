@@ -1,21 +1,24 @@
 <ion-header>
   <ion-navbar>
-    <!-- <button ion-button menuToggle>
+    <ion-buttons start>
+      <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
-    </button> -->
+    </button>
+    </ion-buttons>
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
+   
 
 <ion-content padding>
-  <section class="title-wrap">
-    <!-- <h1 id="title">{{variables.main.title}}</h1>
-    <h2 id="subtitle">{{variables.main.subtitle}}</h2> -->
+  <!-- <section class="title-wrap">
+    <h1 id="title">{{localVarService.main.title}}</h1>
+    <h2 id="subtitle">{{localVarService.main.subtitle}}</h2>
   </section>
   <section class="card-background-page">
-    <!-- <ion-grid>
-      <ion-row>
-        <ion-col *ngFor="let card of variables.main.cards" col-12 col-md-6 col-lg-4 col-xl-3>
+    <ion-grid>
+      <ion-row *ngIf="localVarService.main.cards">
+        <ion-col *ngFor="let card of localVarService.main.cards; let i = index" col-12 col-md-6 col-lg-4 col-xl-3>
           <ion-card>
             <ion-card-content>
               <img src="../../assets/imgs/{{card.imgUrl}}"/>
@@ -26,14 +29,19 @@
               <ion-col text-right>
                 <button ion-button clear small color="danger" icon-start>
                   <ion-icon name='share-alt'></ion-icon>
-                  {{variables.main.btn_txt_more}}
+                  {{localVarService.main.btn_txt_more}}
                 </button>
               </ion-col>
             </ion-row>
           </ion-card>
         </ion-col>
       </ion-row>
-    </ion-grid> -->
-  </section>
+    </ion-grid>
+  </section> -->
+
+
+<button (click)="write(variables)">var</button>
+<button (click)="write(variables)">main</button>
+<button (click)="console.log(variables.cards)">cards</button>
   
 </ion-content>

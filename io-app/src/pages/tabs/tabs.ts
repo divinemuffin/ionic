@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
@@ -15,23 +16,21 @@ import 'rxjs/add/operator/debounceTime';
 })
 export class TabsPage {
   root = HomePage;
+  myIndex: number;
 
   tab1Root = HomePage;
   tab2Root = AboutPage;
   tab3Root = ContactPage;
 
-  pages = [
-    HomePage,
-    AboutPage,
-    ContactPage
-  ]
-
   windowSize:number;
 
-  constructor() {
+  constructor(navParams: NavParams) {
     Observable.fromEvent(window, 'resize')
     .debounceTime(100)
     // .subscribe((e) => this.checkTabbar(e['target'].innerWidth));
+
+    // Set the active tab based on the passed index from menu.ts
+    this.myIndex = navParams.data.tabIndex || 0;
   }
    
   ionViewDidLoad() {
@@ -49,8 +48,12 @@ export class TabsPage {
   }
 
 
-  redirect(page){
-    this.root = page
+  redirectToPage(root){
+    this.root = root;
+  }
+
+  log(object){
+    console.log(object);
   }
 
 }
