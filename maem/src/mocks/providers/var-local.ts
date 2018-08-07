@@ -1,14 +1,14 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-// import { HttpClientModule } from '@angular/common/http';
 
 @Injectable()
-export class LocalVarProvider {
+export class VarLocalProvider {
   main: Object[] = [];
 
-  constructor() {
-    console.log('Hello LocalVarProvider Provider');
+  constructor(public http: HttpClient) {
+    console.log('Hello VarLocalProvider Provider');
 
-    let main:object = {
+    let main = {
       tab: "Main",
       title: "Maem",
       subtitle: "organic",
@@ -38,8 +38,8 @@ export class LocalVarProvider {
       ],
   
       btn_txt_more: "Перейти"
-    }
-
+    };
+    
     for (let value in main) {
       this.main[value] = main[value];
     }
@@ -62,6 +62,4 @@ export class LocalVarProvider {
       return null;
     });
   }
-  
-
 }

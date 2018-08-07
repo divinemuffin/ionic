@@ -3,6 +3,7 @@ import { IonicPage, ModalController, NavController } from 'ionic-angular';
 
 import { Item } from '../../models/item';
 import { Items } from '../../providers';
+import { VarLocalProvider } from '../../providers';
 
 @IonicPage()
 @Component({
@@ -11,9 +12,18 @@ import { Items } from '../../providers';
 })
 export class ListMasterPage {
   currentItems: Item[];
+  main: Object[];
 
-  constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController) {
+  constructor(
+    public navCtrl: NavController, 
+    public items: Items, 
+    public variables: VarLocalProvider,
+    public modalCtrl: ModalController
+  ) {
     this.currentItems = this.items.query();
+    this.main = this.variables.query();
+    console.log(this.items);
+    console.log(this.variables);
   }
 
   /**
