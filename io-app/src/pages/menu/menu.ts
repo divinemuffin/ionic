@@ -7,6 +7,9 @@ import { TabsPage } from '../tabs/tabs';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
 
+import { ToggleTabsProvider } from '../../providers/toggle-tabs/toggle-tabs';
+
+
 export interface PageInterface {
   title: string;
   pageName: string;
@@ -33,7 +36,13 @@ export class MenuPage {
     { title: 'Contacts', pageName: 'Contacts', tabComponent: ContactPage,index: 2, icon: 'shuffle' },
   ];
 
-  constructor(public navCtrl: NavController) {
+  constructor(
+    public navCtrl: NavController,
+    public toggleTab: ToggleTabsProvider
+  ) { }
+
+  ionViewDidLoad() {
+    this.toggleTab.observer.subscribe((e) => this.toggleTab.checkTabbar(e['target'].innerWidth));
   }
 
   openPage(page: PageInterface) {

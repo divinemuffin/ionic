@@ -12,6 +12,7 @@ import { LoginPage } from "../../src/pages/login/login";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LocalVarProvider } from '../providers/local-var/local-var';
+import { ToggleTabsProvider } from '../providers/toggle-tabs/toggle-tabs';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { LocalVarProvider } from '../providers/local-var/local-var';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LocalVarProvider
+    LocalVarProvider,
+    ToggleTabsProvider
   ]
 })
 export class AppModule {}
