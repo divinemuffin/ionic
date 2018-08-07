@@ -9,7 +9,7 @@ export class LocalVarProvider {
   }
 
   // Main page
-  main = {
+  main:object = {
     tab: "Main",
     title: "Maem",
     subtitle: "organic",
@@ -39,11 +39,6 @@ export class LocalVarProvider {
     ],
 
     btn_txt_more: "Перейти"
-  }
-
-
-  getVariables(page) {
-    return this[page];
   }
 
 }

@@ -1,0 +1,8 @@
+{
+  "name": "maem",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "0f5b83fc"
+}

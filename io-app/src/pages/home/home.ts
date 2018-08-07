@@ -21,7 +21,9 @@ export class HomePage {
     this.root = pageName;
   }
 
-  write(thing){
-    console.log(thing);
+  myFunction(thing){
+    // console.log(typeof(thing));
+    // console.log(thing);
+    console.log("xxxx");
   }
 }
