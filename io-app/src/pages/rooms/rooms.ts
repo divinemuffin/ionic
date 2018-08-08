@@ -13,8 +13,4 @@ export class RoomsPage {
     public navCtrl: NavController, 
     public variables: LocalVarProvider
   ) { }
-
-  check(x){
-    console.log(x)
-  }
 }

@@ -1,3 +1,39 @@
-page-about {
 
+// BIG SCREEN
+@media (min-width: 1100px) {
+    page-rooms {
+        ion-card {
+            ion-card-content {
+                // .card-title, .card-subtitle {
+                    
+                //     // background-color: red
+                // }
+            }
+        }
+    }
+}
+
+page-rooms {
+    ion-card {
+        ion-card-content {
+            
+            .card-title, .card-subtitle {
+                margin-top: -4%;
+                position: absolute;
+                top: 26%; left: 0; bottom: 0; right: 0;
+                height: 300px;
+                padding: 36px;
+            }
+
+            .card-subtitle{
+                margin-top: 4%;
+            }
+    
+            img{
+                height: 300px;
+                filter: brightness(70%)
+            }
+        }
+        
+    }
 }
