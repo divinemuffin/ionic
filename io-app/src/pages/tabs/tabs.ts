@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavParams } from 'ionic-angular';
 
-import { AboutPage } from '../about/about';
+import { RoomsPage } from '../rooms/rooms';
 import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 
@@ -15,11 +15,11 @@ import 'rxjs/add/operator/debounceTime';
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
-  root = HomePage;
+  root = RoomsPage;
   myIndex: number;
 
   tab1Root = HomePage;
-  tab2Root = AboutPage;
+  tab2Root = RoomsPage;
   tab3Root = ContactPage;
 
   windowSize:number;

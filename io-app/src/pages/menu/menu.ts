@@ -1,5 +1,5 @@
 
-import { AboutPage } from '../about/about';
+import { RoomsPage } from '../rooms/rooms';
 import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { TabsPage } from '../tabs/tabs';
@@ -10,7 +10,7 @@ import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
 import { ToggleTabsProvider } from '../../providers/toggle-tabs/toggle-tabs';
 
 
-export interface PageInterface {
+export interface PageInterface { 
   title: string;
   pageName: string;
   tabComponent?: any;
@@ -32,8 +32,8 @@ export class MenuPage {
 
   pages: PageInterface[] = [
     { title: 'Home', pageName: 'Home Page', tabComponent: HomePage, index: 0, icon: 'home' },
-    { title: 'About', pageName: 'About', tabComponent: AboutPage, index: 1, icon: 'contacts' },
-    { title: 'Contacts', pageName: 'Contacts', tabComponent: ContactPage,index: 2, icon: 'shuffle' },
+    { title: 'Rooms', pageName: 'Rooms Page', tabComponent: RoomsPage, index: 1, icon: 'list' },
+    { title: 'Contacts', pageName: 'Contacts', tabComponent: ContactPage,index: 2, icon: 'map' },
   ];
 
   constructor(

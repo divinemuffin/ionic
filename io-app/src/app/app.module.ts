@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
+import { RoomsPage } from '../pages/rooms/rooms';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -17,7 +17,7 @@ import { ToggleTabsProvider } from '../providers/toggle-tabs/toggle-tabs';
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
+    RoomsPage,
     ContactPage,
     HomePage,
     TabsPage,
@@ -30,7 +30,7 @@ import { ToggleTabsProvider } from '../providers/toggle-tabs/toggle-tabs';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
+    RoomsPage,
     ContactPage,
     HomePage,
     TabsPage,
