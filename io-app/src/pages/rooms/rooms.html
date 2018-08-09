@@ -13,9 +13,11 @@
         <ion-col *ngFor="let room of objectKeys(variables.rooms); let i = index" col-12>
           <ion-card>
             <ion-card-content>
-              <img src="../../assets/imgs/rooms/{{variables.rooms[room].images[0]}}" *ngIf="variables.rooms[room].images; else placeholder"/>
+              <div class="parallax" [ngStyle]="{ 'background-image': 'url(../../assets/imgs/rooms/' + variables.rooms[room].images[0] + ')'}" *ngIf="variables.rooms[room].images; else placeholder">
+                <!-- <img src="../../assets/imgs/rooms/{{variables.rooms[room].images[0]}}" *ngIf="variables.rooms[room].images; else placeholder"/> -->
+              </div>
               <ng-template #placeholder>
-                <img src="https://dummyimage.com/mediumrectangle/222222/eeeeee" style="border: solid 1px whitesmoke"/>
+              <div class="parallax" style="background-image: url(https://dummyimage.com/mediumrectangle/222222/eeeeee)"></div>
               </ng-template>
               <div class="card-title" style="font-size: 5vw;">{{variables.rooms[room].name}}</div>
               <div class="card-subtitle" style="font-size: 120%;">{{variables.rooms[room].subtitle}}</div>
@@ -34,7 +36,7 @@
                 </ng-template>
               </ion-col>
               <ion-col center text-center>
-                <button ion-button icon-end clear small color="light">
+                <button ion-button icon-end clear small color="light" (click)="goToNextPage(RoomDetailsPage, variables.rooms[room])">
                   <div>More</div>
                   <ion-icon name="arrow-dropright"></ion-icon>
                 </button>

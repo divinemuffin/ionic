@@ -16,6 +16,16 @@
 page-rooms {
     ion-card {
         ion-card-content {
+            .parallax{
+                height: 300px;
+                filter: brightness(70%);
+
+                // background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                // will-change:top;
+            }
             
             .card-title, .card-subtitle {
                 margin-top: -4%;
@@ -30,8 +40,8 @@ page-rooms {
             }
     
             img{
-                height: 300px;
-                filter: brightness(70%)
+                // height: 300px;
+                // filter: brightness(70%)
             }
         }
         

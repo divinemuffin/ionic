@@ -1,0 +1,33 @@
+page-room-details {
+    .center{
+        margin: 0 auto;
+    }
+}
+
+
+
+// CALENDAR
+.calendar{
+    .day-cell{
+        // background-color: $color(dark);
+        padding-top: 100%;
+        border: solid 1px #6f6f6f;
+        
+        border-collapse: collapse;
+        
+
+        .name{
+            position: absolute;
+            top: 0;
+            right: 27%;
+            font-size: 20px;
+        }
+
+        .number {
+            position: absolute;
+            top: 40%;
+            right: 36%;
+            font-size: 40px;
+        }
+    }
+}
