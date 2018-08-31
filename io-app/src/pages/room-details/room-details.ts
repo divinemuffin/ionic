@@ -1,32 +1,30 @@
 import { Component } from '@angular/core';
-import {  NavController, NavParams } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
+import { NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the RoomDetailsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { CalendarComponent } from "./calendar.component";     // my popup page
 
 @Component({
   selector: 'page-room-details',
   templateUrl: 'room-details.html',
 })
 export class RoomDetailsPage {
-  room: object;
-  isFormValid: boolean = false;
+  isFormValid: boolean = false;     // submit entire form and make order
+  room = [];
 
-  days = []
+  constructor(public modalCtrl: ModalController, public navParams: NavParams) { this.room = navParams['data']; }
+  ionViewDidLoad() { }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.room = navParams['data'];
-    for (let index = 1; index <= 31; index++) {
-      this.days.push({num:index, name:"mon"})
-    }
+  openDatePicker() {
+    console.log("OPEN!~");
+    let profileModal = this.modalCtrl.create(CalendarComponent, { userId: 8675309 });
+    profileModal.onDidDismiss(data => {
+      console.log(data);
+    });
+    profileModal.present();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RoomDetailsPage');
-  }
-
+  // openDatePicker(HTMLobject){
+  //   console.log("this works fine: ", HTMLobject);
+  // }
 }

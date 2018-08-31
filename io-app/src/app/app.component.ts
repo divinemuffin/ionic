@@ -6,11 +6,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from "../../src/pages/login/login";
 import { RoomsPage } from '../pages/rooms/rooms';
 
+
+import { AdminPanelPage } from "../pages/admin-panel/admin-panel"
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = RoomsPage;
+  rootPage:any = AdminPanelPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

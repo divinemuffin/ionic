@@ -1,33 +1,47 @@
+$dark: color($colors, dark);
+$light: color($colors, light);
+$orange: color($colors, primary);
+
+// GALLERY
+.gallery{
+    .swiper-pagination-bullet-active{
+        background: $orange;
+    }
+}
+// CALLENDAR
 page-room-details {
     .center{
         margin: 0 auto;
     }
 }
 
+ion-calendar{
+    background-color: $dark;
+    color: $light;
 
-
-// CALENDAR
-.calendar{
-    .day-cell{
-        // background-color: $color(dark);
-        padding-top: 100%;
-        border: solid 1px #6f6f6f;
-        
-        border-collapse: collapse;
-        
-
-        .name{
-            position: absolute;
-            top: 0;
-            right: 27%;
-            font-size: 20px;
-        }
-
-        .number {
-            position: absolute;
-            top: 40%;
-            right: 36%;
-            font-size: 40px;
-        }
+    ion-calendar-month-picker .month-packer-item button{
+        color: $light;
     }
+
+    ion-calendar-month{
+        background-color: $dark;
+
+        button.days-btn.today p {
+            color: $orange;
+        }
+
+        button.days-btn p{
+            color: $light;
+        }
+
+        button.next-month-day p, button.last-month-day p{
+            color: $light !important;
+            opacity: 0.25;
+        }
+        .endSelection button.days-btn p, 
+        .today.on-selected p, 
+        .startSelection button.days-btn p{
+            opacity: 0.75;
+        }
+    } 
 }
